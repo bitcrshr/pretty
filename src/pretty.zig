@@ -807,7 +807,7 @@ fn Pretty(opt: Options) type {
 /// An interface that allows checking the inclusion or exclusion of items of
 /// a specified type.
 fn Filter(T: type) type {
-    return union(enum) {
+    return union(enum(usize)) {
         include: []const T,
         exclude: []const T,
         fn includes(s: @This(), item: T) bool {
